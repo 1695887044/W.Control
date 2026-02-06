@@ -1,0 +1,24 @@
+﻿<Application x:Class="W.Controls.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:W.Controls"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/W.Controls;component/Themes/AutoPropertyGridStyle.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/W.Controls;component/Styles/CheckBoxStyle.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/W.Controls;component/Styles/ComboBoxStyle.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/W.Controls;component/Styles/LabelStyle.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/W.Controls;component/Styles/ButtonStyle.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/W.Controls;component/Styles/ScrollStyle.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/W.Controls;component/Themes/TimePickStyle.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/W.Controls;component/Styles/CalendarDayButtonStyle.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/W.Controls;component/Themes/ModernTextBoxStyle.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/W.Controls;component/Themes/StatusBadgeStyle.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/W.Controls;component/Themes/ModernExpander.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/W.Controls;component/Themes/ModernNumericInput.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

@@ -1,0 +1,218 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <SolidColorBrush x:Key="Button.Static.Background" Color="#007ACC" />
+    <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#1F8ED3" />
+    <SolidColorBrush x:Key="Button.Pressed.Background" Color="#005A9E" />
+    <SolidColorBrush x:Key="Button.Static.Foreground" Color="White" />
+    <LinearGradientBrush x:Key="Button.Background.Static" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Offset="0" Color="#6366F1" />
+        <GradientStop Offset="1" Color="#10B981" />
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="Button.Background.MouseOver" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Offset="0" Color="White" />
+        <GradientStop Offset="1" Color="#6366F1" />
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="Button.Background.Pressed" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Offset="0" Color="#4338CA" />
+        <GradientStop Offset="1" Color="#3730A3" />
+    </LinearGradientBrush>
+
+    <DropShadowEffect
+        x:Key="Button.Shadow"
+        BlurRadius="2"
+        Opacity="0.2"
+        ShadowDepth="1"
+        Color="#4338CA" />
+    <Style x:Key="ModernPremiumButton" TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="{StaticResource Button.Background.Static}" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontWeight" Value="SemiBold" />
+        <Setter Property="Padding" Value="24,10" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="BorderBrush" Value="#4338CA" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border
+                        x:Name="PART_Border"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="6"
+                        Effect="{StaticResource Button.Shadow}"
+                        RenderTransformOrigin="0.5,0.5">
+
+                        <Border.RenderTransform>
+                            <ScaleTransform ScaleX="1" ScaleY="1" />
+                        </Border.RenderTransform>
+
+                        <ContentPresenter
+                            Margin="{TemplateBinding Padding}"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center">
+                            <ContentPresenter.Resources>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Setter Property="Effect">
+                                        <Setter.Value>
+                                            <DropShadowEffect
+                                                BlurRadius="12"
+                                                Opacity="0.1"
+                                                ShadowDepth="0.5"
+                                                Color="#000000" />
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </ContentPresenter.Resources>
+                        </ContentPresenter>
+                    </Border>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="{StaticResource Button.Background.MouseOver}" />
+                        </Trigger>
+
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" Value="{StaticResource Button.Background.Pressed}" />
+                            <Setter TargetName="PART_Border" Property="Effect" Value="{x:Null}" />
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation
+                                            Storyboard.TargetName="PART_Border"
+                                            Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)"
+                                            To="0.96"
+                                            Duration="0:0:0.05" />
+                                        <DoubleAnimation
+                                            Storyboard.TargetName="PART_Border"
+                                            Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)"
+                                            To="0.96"
+                                            Duration="0:0:0.05" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation
+                                            Storyboard.TargetName="PART_Border"
+                                            Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)"
+                                            To="1"
+                                            Duration="0:0:0.1" />
+                                        <DoubleAnimation
+                                            Storyboard.TargetName="PART_Border"
+                                            Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)"
+                                            To="1"
+                                            Duration="0:0:0.1" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="ModernButton" TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="{StaticResource Button.Static.Background}" />
+        <Setter Property="Foreground" Value="{StaticResource Button.Static.Foreground}" />
+        <Setter Property="Padding" Value="20,8" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border
+                        x:Name="PART_Border"
+                        Background="{TemplateBinding Background}"
+                        CornerRadius="4"
+                        RenderTransformOrigin="0.5,0.5">
+
+                        <Border.RenderTransform>
+                            <ScaleTransform ScaleX="1" ScaleY="1" />
+                        </Border.RenderTransform>
+
+                        <ContentPresenter
+                            Margin="{TemplateBinding Padding}"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center" />
+                    </Border>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="PART_Border" Property="Background" Value="{StaticResource Button.MouseOver.Background}" />
+                        </Trigger>
+
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="PART_Border" Property="Background" Value="{StaticResource Button.Pressed.Background}" />
+
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation
+                                            Storyboard.TargetName="PART_Border"
+                                            Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)"
+                                            To="0.95"
+                                            Duration="0:0:0.05" />
+                                        <DoubleAnimation
+                                            Storyboard.TargetName="PART_Border"
+                                            Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)"
+                                            To="0.95"
+                                            Duration="0:0:0.05" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation
+                                            Storyboard.TargetName="PART_Border"
+                                            Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)"
+                                            To="1"
+                                            Duration="0:0:0.05" />
+                                        <DoubleAnimation
+                                            Storyboard.TargetName="PART_Border"
+                                            Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)"
+                                            To="1"
+                                            Duration="0:0:0.05" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
+                        </Trigger>
+
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" Value="0.5" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="MyCustomFocusVisual">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Border
+                        Margin="-3"
+                        BorderBrush="#818CF8"
+                        BorderThickness="1.5"
+                        CornerRadius="7" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style BasedOn="{StaticResource ModernPremiumButton}" TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="BorderBrush" Value="#007ACC" />
+        <Setter Property="Foreground" Value="#007ACC" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Width" Value="auto" />
+        <Setter Property="Margin" Value="4" />
+        <Setter Property="FocusVisualStyle" Value="{StaticResource MyCustomFocusVisual}" />
+    </Style>
+    
+</ResourceDictionary>

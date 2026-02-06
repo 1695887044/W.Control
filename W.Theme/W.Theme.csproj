@@ -1,0 +1,73 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	  <TargetFramework>net6.0-windows</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+	  <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Update="Backgrounds\Default.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Backgrounds\DrawingBrush.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Backgrounds\ImageBrush.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Backgrounds\LinearGradientBrush.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Backgrounds\RadialGradientBrush.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="BrushKeys.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="ColorKeys.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Colors\ColorThemeType.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Colors\Dark.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Colors\Light.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="FontSizeKeys.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="FontSizes\FontSizeThemeType.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="FontSizes\Large.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="FontSizes\Small.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="LayoutKeys.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Layouts\Large.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Layouts\LayoutThemeType.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Layouts\Small.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="SystemKeys.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+  </ItemGroup>
+
+</Project>
